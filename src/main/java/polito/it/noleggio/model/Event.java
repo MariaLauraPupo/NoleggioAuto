@@ -2,19 +2,22 @@ package polito.it.noleggio.model;
 
 import java.time.LocalTime;
 
+//rappresenta l'evento del mio simulatore
 public class Event implements Comparable<Event>{
 	
-	public enum EventType {
-		NUOVO_CLIENTE,
-		RITORNO_AUTO
+	public enum EventType{
+		//enum = classi che definisco automaticamente dele costanti
+		NUOVO_CLIENTE,//vale 0
+		RITORNO_AUTO//vale 1
 	}
 	
-	private LocalTime time ;
-	private EventType type ;
+	private LocalTime time;
+	private EventType type;//questo type può valere 0 o 1
 	
 	@Override
 	public int compareTo(Event other) {
-		return this.time.compareTo(other.time) ;
+		//faccio il confronto tra i tempi
+		return this.time.compareTo(other.time);
 	}
 
 	public Event(LocalTime time, EventType type) {
@@ -41,7 +44,7 @@ public class Event implements Comparable<Event>{
 
 	@Override
 	public String toString() {
-		return "Event [time=" + time + ", type=" + type + "]";
+		return "Event [time=" + time + ", type=" + type + "]" +"\n";
 	}
 	
 	
